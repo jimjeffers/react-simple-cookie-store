@@ -1,5 +1,8 @@
 // @flow
-import { isDefined, isBlank } from "./helpers"
+import {
+  isDefined,
+  isBlank
+} from "./helpers"
 import cookie from "react-cookie"
 import moment from "moment"
 
@@ -15,8 +18,8 @@ const isSecure = (): boolean =>
  * @param {string} key The name of the cookie to lookup.
  * @returns {?any} The object in the cookie store or undefined. 
  */
-export const getCookie = (key: string): ?any => {
-  const item = cookie.load(key)
+export const getCookie = (key: string): ? any => {
+  const item = cookie.get(key)
   return isBlank(item) ? undefined : item
 }
 
@@ -41,5 +44,7 @@ export const setCookie = (key: string, value: string, days: number): void => {
  * @param {string} key The name of the cookie to remove.
  */
 const removeCookie = (key: string): void => {
-  cookie.remove(key, { path: "/" })
+  cookie.remove(key, {
+    path: "/"
+  })
 }
