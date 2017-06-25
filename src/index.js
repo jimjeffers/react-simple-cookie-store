@@ -1,12 +1,9 @@
 // @flow
-import {
-  isDefined,
-  isBlank
-} from "./helpers"
-import {
-  Cookies
-} from "react-cookie"
+import { isDefined, isBlank } from "./helpers"
+import Cookies from "universal-cookie"
 import moment from "moment"
+
+const cookies = new Cookies()
 
 /**
  * Determines if the connection is currently utilizing HTTPS.
@@ -20,8 +17,8 @@ const isSecure = (): boolean =>
  * @param {string} key The name of the cookie to lookup.
  * @returns {?any} The object in the cookie store or undefined. 
  */
-export const getCookie = (key: string): ? any => {
-  const item = Cookies.get(key)
+export const getCookie = (key: string): ?any => {
+  const item = cookies.get(key)
   return isBlank(item) ? undefined : item
 }
 
@@ -38,7 +35,7 @@ export const setCookie = (key: string, value: string, days: number): void => {
     maxAge: moment.duration(days, "days").asSeconds(),
     secure: isSecure()
   }
-  Cookies.set(key, value, options)
+  cookies.set(key, value, options)
 }
 
 /**
@@ -46,7 +43,7 @@ export const setCookie = (key: string, value: string, days: number): void => {
  * @param {string} key The name of the cookie to remove.
  */
 const removeCookie = (key: string): void => {
-  Cookies.remove(key, {
+  cookies.remove(key, {
     path: "/"
   })
 }
