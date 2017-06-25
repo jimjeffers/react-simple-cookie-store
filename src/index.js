@@ -3,7 +3,9 @@ import {
   isDefined,
   isBlank
 } from "./helpers"
-import cookie from "react-cookie"
+import {
+  Cookies
+} from "react-cookie"
 import moment from "moment"
 
 /**
@@ -19,7 +21,7 @@ const isSecure = (): boolean =>
  * @returns {?any} The object in the cookie store or undefined. 
  */
 export const getCookie = (key: string): ? any => {
-  const item = cookie.get(key)
+  const item = Cookies.get(key)
   return isBlank(item) ? undefined : item
 }
 
@@ -36,7 +38,7 @@ export const setCookie = (key: string, value: string, days: number): void => {
     maxAge: moment.duration(days, "days").asSeconds(),
     secure: isSecure()
   }
-  cookie.save(key, value, options)
+  Cookies.set(key, value, options)
 }
 
 /**
@@ -44,7 +46,7 @@ export const setCookie = (key: string, value: string, days: number): void => {
  * @param {string} key The name of the cookie to remove.
  */
 const removeCookie = (key: string): void => {
-  cookie.remove(key, {
+  Cookies.remove(key, {
     path: "/"
   })
 }
