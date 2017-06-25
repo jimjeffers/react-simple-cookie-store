@@ -1,7 +1,7 @@
 ~~React~~ Simple Cookie Store
 =========================
 
-A dead simple interface for storing cookies. Built on top of [universal-cookies](https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie) and (momentjs)[https://momentjs.com]. Automatically sets cookies as secure provided the user is browsing via HTTPS. To illustrate usage, check out this simple example storing an access token:
+A dead simple interface for storing cookies. Built on top of [universal-cookies](https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie) and [momentjs](https://momentjs.com). Automatically sets cookies as secure provided the user is browsing via HTTPS. To illustrate usage, check out this simple example storing an access token:
 
 ```js
 import { setCookie, getCookie, removeCookie } from "react-simple-cookie-store"
