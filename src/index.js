@@ -1,4 +1,4 @@
-import jwtDecode from "jwt-decode"
+// @flow
 import { isDefined, isBlank } from "./helpers"
 import cookie from "react-cookie"
 import moment from "moment"
