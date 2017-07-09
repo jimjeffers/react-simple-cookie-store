@@ -42,7 +42,7 @@ export const setCookie = (key: string, value: string, days: number): void => {
  * Clears a browser cookie matching a supplied key.
  * @param {string} key The name of the cookie to remove.
  */
-const removeCookie = (key: string): void => {
+export const removeCookie = (key: string): void => {
   cookies.remove(key, {
     path: "/"
   })
