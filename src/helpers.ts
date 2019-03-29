@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * A convenience method to test if a passed prop has been defined.
  * @param {*} prop A property to test.

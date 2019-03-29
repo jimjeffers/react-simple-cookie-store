@@ -1,7 +1,6 @@
-// @flow
-import { isDefined, isBlank } from "./helpers"
-import Cookies from "universal-cookie"
 import moment from "moment"
+import Cookies from "universal-cookie"
+import { isBlank, isDefined } from "./helpers"
 
 const cookies = new Cookies()
 
@@ -15,9 +14,9 @@ const isSecure = (): boolean =>
 /**
  * Retrieves a value stored in an HTTP cookie.
  * @param {string} key The name of the cookie to lookup.
- * @returns {?any} The object in the cookie store or undefined. 
+ * @returns {?any} The object in the cookie store or undefined.
  */
-export const getCookie = (key: string): ?any => {
+export const getCookie = (key: string): any => {
   const item = cookies.get(key)
   return isBlank(item) ? undefined : item
 }
@@ -30,9 +29,12 @@ export const getCookie = (key: string): ?any => {
  */
 export const setCookie = (key: string, value: string, days: number): void => {
   const options = {
-    path: "/",
-    expires: moment.utc().add(days, "days").toDate(),
+    expires: moment
+      .utc()
+      .add(days, "days")
+      .toDate(),
     maxAge: moment.duration(days, "days").asSeconds(),
+    path: "/",
     secure: isSecure()
   }
   cookies.set(key, value, options)
