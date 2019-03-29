@@ -1,4 +1,5 @@
 module.exports = {
   preset: "ts-jest",
-  testEnvironment: "node"
+  testEnvironment: "node",
+  testURL: "https://www.somthing.com/test.html"
 }

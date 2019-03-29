@@ -8,7 +8,7 @@ const cookies = new Cookies()
  * Determines if the connection is currently utilizing HTTPS.
  * @returns {boolean} True if the connection is HTTPS.
  */
-const isSecure = (): boolean =>
+export const isSecure = (): boolean =>
   isDefined(location) && location.protocol === "https:"
 
 /**
