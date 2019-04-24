@@ -1,6 +1,6 @@
 {
   "name": "react-simple-cookie-store",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A simple cookie store built on top of universal-cookie.",
   "files": [
     "lib"
