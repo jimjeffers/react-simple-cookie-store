@@ -1,4 +1,4 @@
-import moment from "moment"
+import { DateTime, Duration } from "luxon"
 import Cookies from "universal-cookie"
 import { isBlank, isDefined } from "./helpers"
 
@@ -29,11 +29,11 @@ export const getCookie = (key: string): any => {
  */
 export const setCookie = (key: string, value: string, days: number): void => {
   const options = {
-    expires: moment
+    expires: DateTime
       .utc()
-      .add(days, "days")
-      .toDate(),
-    maxAge: moment.duration(days, "days").asSeconds(),
+      .plus({ days })
+      .toJSDate(),
+    maxAge: Duration.fromObject({ days }).as('seconds'),
     path: "/",
     secure: isSecure()
   }

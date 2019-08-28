@@ -10,8 +10,7 @@
   "author": "Jim Jeffers <jim@sumocreations.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/moment": "^2.13.0",
-    "moment": "^2.18.1",
+    "luxon": "^1.17.2",
     "universal-cookie": "^2.0.8"
   },
   "devDependencies": {
@@ -19,6 +18,7 @@
     "@types/jsonwebtoken": "^8.3.2",
     "@types/jwt-decode": "^2.2.1",
     "@types/universal-cookie": "^2.2.0",
+    "@types/luxon": "^1.15.2",
     "handlebars": "^4.1.2",
     "jest": "^23.6.0",
     "js-yaml": "^3.13.1",
