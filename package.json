@@ -10,7 +10,7 @@
   "author": "Jim Jeffers <jim@sumocreations.com>",
   "license": "MIT",
   "dependencies": {
-    "luxon": "^1.17.2",
+    "luxon": "^2.5.2",
     "universal-cookie": "^2.0.8"
   },
   "devDependencies": {
